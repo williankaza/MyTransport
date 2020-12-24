@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1001827052785",
+    "project_id": "mytransport-fiap36scj",
+    "storage_bucket": "mytransport-fiap36scj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001827052785:android:28fd077f36d874ff4bcd50",
+        "android_client_info": {
+          "package_name": "br.com.fiap.mytransport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1001827052785-mf2656mt2l8rp92pkmtsmdujd6f34pef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpaNa4hpMYgJ04F0o1cu71ZgsM2l6BcMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1001827052785-mf2656mt2l8rp92pkmtsmdujd6f34pef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
