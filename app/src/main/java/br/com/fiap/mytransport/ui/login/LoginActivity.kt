@@ -43,19 +43,19 @@ class LoginActivity : Activity() {
 
 
         if (tv_username.text.toString().isEmpty()) {
-            tv_username.error = "Please enter email"
+            tv_username.error = "Por favor, entre com e-mail"
             tv_username.requestFocus()
             return
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(tv_username.text.toString()).matches()) {
-            tv_username.error = "Please enter valid email"
+            tv_username.error = "Por favor, entre com um e-mail válido"
             tv_username.requestFocus()
             return
         }
 
         if (tv_password.text.toString().isEmpty()) {
-            tv_password.error = "Please enter password"
+            tv_password.error = "Por favor, entre com a senha"
             tv_password.requestFocus()
             return
         }
@@ -86,13 +86,13 @@ class LoginActivity : Activity() {
                 finish()
             }else{
                 Toast.makeText(
-                        baseContext, "Please verify your email address.",
+                        baseContext, "Por favor, verifique seu email para finalizar o cadastro",
                         Toast.LENGTH_SHORT
                 ).show()
             }
         } else {
             Toast.makeText(
-                    baseContext, "Login failed.",
+                    baseContext, "Não foi possível se autenticar",
                     Toast.LENGTH_SHORT
             ).show()
         }

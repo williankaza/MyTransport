@@ -13,9 +13,9 @@ import com.google.firebase.auth.FirebaseAuth
 class SignUpActivity : Activity() {
 
     private lateinit var auth: FirebaseAuth
-    val btn_sign_up :Button by lazy { findViewById(R.id.btn_sign_up) }
-    val tv_username: TextView by lazy { findViewById(R.id.tv_username) }
-    val tv_password: TextView by lazy { findViewById(R.id.tv_password) }
+    val btn_sign_up :Button by lazy { findViewById(R.id.btn_sign_up_finish) }
+    val tv_username: TextView by lazy { findViewById(R.id.tv_username_signup) }
+    val tv_password: TextView by lazy { findViewById(R.id.tv_password_signup) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,19 +30,19 @@ class SignUpActivity : Activity() {
 
     private fun signUpUser() {
         if (tv_username.text.toString().isEmpty()) {
-            tv_username.error = "Please enter email"
+            tv_username.error = "Por favor, entre com e-mail"
             tv_username.requestFocus()
             return
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(tv_username.text.toString()).matches()) {
-            tv_username.error = "Please enter valid email"
+            tv_username.error = "Por favor, entre com um e-mail valido"
             tv_username.requestFocus()
             return
         }
 
         if (tv_password.text.toString().isEmpty()) {
-            tv_password.error = "Please enter password"
+            tv_password.error = "Por favor, entre com a senha"
             tv_password.requestFocus()
             return
         }
@@ -60,7 +60,7 @@ class SignUpActivity : Activity() {
                         }
                 } else {
                     Toast.makeText(
-                        baseContext, "Sign Up failed. Try again after some time.",
+                        baseContext, "O cadastro falhou, por favor tente novamente ou mais tarde",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
