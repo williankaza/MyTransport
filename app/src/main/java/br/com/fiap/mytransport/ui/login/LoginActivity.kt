@@ -7,7 +7,7 @@ import android.util.Patterns
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import br.com.fiap.mytransport.MapsActivity
+import br.com.fiap.mytransport.ui.maps.MapsActivity
 import br.com.fiap.mytransport.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser

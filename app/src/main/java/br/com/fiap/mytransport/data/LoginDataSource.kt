@@ -1,6 +1,6 @@
 package br.com.fiap.mytransport.data
 
-import br.com.fiap.mytransport.data.model.LoggedInUser
+import br.com.fiap.mytransport.model.LoggedInUser
 import java.io.IOException
 
 /**

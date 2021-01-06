@@ -1,7 +1,8 @@
-package br.com.fiap.mytransport
+package br.com.fiap.mytransport.ui.maps
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.fiap.mytransport.R
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
