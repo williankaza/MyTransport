@@ -1,25 +1,24 @@
 package br.com.fiap.mytransport.ui.maps
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import br.com.fiap.mytransport.R
 import br.com.fiap.mytransport.data.remote.APIService
 import br.com.fiap.mytransport.data.repository.BusRepositoryImpl
 import br.com.fiap.mytransport.domain.repository.BusRepository
-
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.gms.maps.model.PolylineOptions
-import java.util.function.Consumer
+import com.google.android.gms.maps.model.*
+import kotlinx.android.synthetic.main.activity_maps.*
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var busRepository: BusRepository
+    private lateinit var onibusSelecionado: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +28,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
+        onibusSelecionado = intent.getStringExtra("NUMERO_ONIBUS").toString()
         busRepository = BusRepositoryImpl(APIService.instance)
+
+        btReturn.setOnClickListener{
+            goPreviousActivity()
+        }
+    }
+
+    private fun goPreviousActivity() {
+        super.finish()
     }
 
     /**
@@ -43,7 +51,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
 /*
         // Add a marker in Sydney and move the camera
         val sydney = LatLng(-34.0, 151.0)
@@ -51,20 +58,34 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
 */
         busRepository.pesquisarUmaLinha(
-                "201-2019",
-                { onibus ->
-                    if (onibus != null) {
-                        for (ponto in onibus.lsPontos){
-                            val novoMarker = LatLng(ponto.latitude.toDouble(), ponto.longitude.toDouble())
-                            mMap.addMarker(MarkerOptions().position(novoMarker).title(onibus.numero))
-                            mMap.moveCamera(CameraUpdateFactory.newLatLng(novoMarker))
-                            mMap.animateCamera(CameraUpdateFactory.zoomTo(14F),2000,null)
+            onibusSelecionado,
+            { onibus ->
+                if (onibus != null) {
+                    var newLatLng = LatLng(0.0,0.0)
+                    for (ponto in onibus.lsPontos) {
+                        if (newLatLng.latitude == 0.0 && newLatLng.longitude == 0.0){
+                            newLatLng = LatLng(ponto.latitude.toDouble(), ponto.longitude.toDouble())
+                            mMap.addMarker(MarkerOptions().position(newLatLng).title(onibus.numero + " - Inicio").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)))
                         }
-                    }
-                },
-                {
 
+
+                        val novoMarker = LatLng(ponto.latitude.toDouble(), ponto.longitude.toDouble())
+                        mMap.addPolyline(PolylineOptions()
+                                .add(newLatLng, novoMarker)
+                                .width(5f)
+                                .color(Color.RED))
+
+                        mMap.moveCamera(CameraUpdateFactory.newLatLng(novoMarker))
+                        mMap.animateCamera(CameraUpdateFactory.zoomTo(15F), 2000, null)
+                        newLatLng = novoMarker
+                    }
+                    mMap.addMarker(MarkerOptions().position(newLatLng).title(onibus.numero + " - Fim ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)))
                 }
+
+            },
+            {
+
+            }
         )
     }
 

@@ -1,5 +1,7 @@
 package br.com.fiap.mytransport.data.repository
 
+import android.util.Log
+import android.util.Log.INFO
 import br.com.fiap.mytransport.data.remote.BusService
 import br.com.fiap.mytransport.data.remote.mapper.BusPayloadMapper
 import br.com.fiap.mytransport.domain.entity.Onibus
@@ -8,6 +10,7 @@ import br.com.fiap.mytransport.model.OnibusPayload
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.logging.Logger
 
 class BusRepositoryImpl (
     val busService: BusService?
@@ -22,7 +25,7 @@ class BusRepositoryImpl (
                 ) {
                     if (response.isSuccessful){
                         val onibusPayload = response.body()
-
+                        Log.d("wyk","wyk - Entrou no Payload")
                         if (onibusPayload == null){
                             onError(Throwable("Não foram encontradas linhas!"))
                         } else {
