@@ -1,4 +1,4 @@
-package br.com.fiap.mytransport.data.model
+package br.com.fiap.mytransport.model
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository

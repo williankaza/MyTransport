@@ -7,8 +7,9 @@ import android.util.Patterns
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import br.com.fiap.mytransport.MapsActivity
+import br.com.fiap.mytransport.ui.maps.MapsActivity
 import br.com.fiap.mytransport.R
+import br.com.fiap.mytransport.ui.consulta.RoutesActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
@@ -82,7 +83,7 @@ class LoginActivity : Activity() {
 
         if (currentUser != null) {
             if(currentUser.isEmailVerified) {
-                startActivity(Intent(this, MapsActivity::class.java))
+                startActivity(Intent(this, RoutesActivity::class.java))
                 finish()
             }else{
                 Toast.makeText(

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
     id 'com.google.gms.google-services'
 }
 
@@ -62,6 +63,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore-ktx:22.0.1'
     implementation 'com.google.firebase:firebase-core:18.0.0'
     implementation 'com.google.firebase:firebase-analytics-ktx:18.0.0'
+
+    //Biblioteca para consumir webservice
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+
+    //Biblioteca para realizar o parse json para objeto/objeto para json
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
 
     implementation 'com.google.firebase:firebase-config-ktx:20.0.2'
     testImplementation 'junit:junit:4.+'

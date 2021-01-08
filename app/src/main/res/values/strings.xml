@@ -15,4 +15,7 @@
     <string name="sign_up">SignUp</string>
     <string name="email">Email</string>
     <string name="password">Senha</string>
+    <string name="select_route">Select a route</string>
+    <string name="show_route">Show route</string>
+    <string name="return_to_list">Return</string>
 </resources>

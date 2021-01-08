@@ -1,6 +1,6 @@
 package br.com.fiap.mytransport.data
 
-import br.com.fiap.mytransport.data.model.LoggedInUser
+import br.com.fiap.mytransport.model.LoggedInUser
 
 /**
  * Class that requests authentication and user information from the remote data source and
