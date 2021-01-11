@@ -10,6 +10,7 @@
         android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:background="#08C6AC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,8 +20,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
+            android:background="#08C6AC"
             android:text="@string/select_route"
             android:textAlignment="center"
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
     </androidx.cardview.widget.CardView>
 
