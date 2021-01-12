@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import br.com.fiap.mytransport.R
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SignUpActivity : Activity() {
 
@@ -24,6 +25,10 @@ class SignUpActivity : Activity() {
 
         btn_sign_up.setOnClickListener {
             signUpUser()
+        }
+
+        btCancelar.setOnClickListener{
+            super.finish()
         }
 
     }

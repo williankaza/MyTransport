@@ -29,9 +29,7 @@ class LoginActivity : Activity() {
 
         btn_sign_up.setOnClickListener() {
             startActivity(Intent(this, SignUpActivity::class.java))
-            finish()
         }
-
 
         btn_log_in.setOnClickListener {
             doLogin()
