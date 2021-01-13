@@ -13,4 +13,10 @@ interface BusRepository {
         onComplete: (Onibus?) -> Unit,
         onError: (Throwable) -> Unit
     )
+
+    fun atualizarFavorito(
+        id: String,
+        onComplete: (Onibus?) -> Unit,
+        onError: (Throwable) -> Unit
+    )
 }

@@ -20,4 +20,8 @@
     <string name="return_to_list">Return</string>
     <string name="cancel">Cancel</string>
     <string name="register">Register</string>
+    <string name="route">Route</string>
+    <string name="go_to_routes">Go to Routes</string>
+    <string name="go_to_about">About</string>
+    <string name="logout">Logout</string>
 </resources>

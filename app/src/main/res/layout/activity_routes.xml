@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.consulta.RoutesActivity">
+    tools:context=".ui.consulta.RoutesActivity"
+    android:background="#212B37">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#08C6AC"
+        app:cardBackgroundColor="#212B37"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,7 +20,8 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="0dp"
+            android:paddingTop="12dp"
             android:background="#08C6AC"
             android:text="@string/select_route"
             android:textAlignment="center"
@@ -30,7 +32,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/routes_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height= "0dp"
         android:layout_marginTop="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"

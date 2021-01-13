@@ -2,9 +2,10 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
     android:layout_marginTop="10dp"
     android:background="#08C6AC"
     app:cardBackgroundColor="#FFFFFF"
@@ -12,34 +13,59 @@
     app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="371dp"
-        android:layout_height="99dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="#08C6AC">
 
         <TextView
             android:id="@+id/numero_onibus"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvLinha"
+            app:layout_constraintEnd_toStartOf="@+id/ivFavorite"
+            app:layout_constraintStart_toEndOf="@+id/tvLinha"
+            app:layout_constraintTop_toTopOf="@+id/tvLinha"
+            tools:text="12314" />
+
+        <TextView
+            android:id="@+id/tvLinha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Numero onibus"
+            android:text="@string/route"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="30dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/consultarOnibus"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:background="#212B37"
             android:text="@string/show_route"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/numero_onibus"
-            app:layout_constraintStart_toStartOf="@+id/numero_onibus"
+            app:layout_constraintEnd_toEndOf="@+id/ivFavorite"
+            app:layout_constraintStart_toStartOf="@+id/tvLinha"
             app:layout_constraintTop_toBottomOf="@+id/numero_onibus" />
+
+        <ImageView
+            android:id="@+id/ivFavorite"
+            android:layout_width="74dp"
+            android:layout_height="53dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/numero_onibus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/numero_onibus"
+            app:srcCompat="@drawable/unfav_heart" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

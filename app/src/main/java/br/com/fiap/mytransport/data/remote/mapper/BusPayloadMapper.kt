@@ -8,6 +8,7 @@ object BusPayloadMapper {
     fun map(onibus: OnibusPayload) = Onibus(
         onibus.numero,
         onibus.ativo,
-        onibus.pontos
+        onibus.favorito,
+        onibus.pontos,
     )
 }

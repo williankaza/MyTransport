@@ -75,5 +75,32 @@ class BusRepositoryImpl (
             })
     }
 
+    override fun atualizarFavorito(id: String, onComplete: (Onibus?) -> Unit, onError: (Throwable) -> Unit) {
+        busService
+            ?.atualizarFavorito(id)
+            ?.enqueue(object : Callback<OnibusPayload>{
+                override fun onResponse(
+                        call: Call<OnibusPayload>,
+                        response: Response<OnibusPayload>
+                ) {
+                    if (response.isSuccessful){
+                        val onibusPayload = response.body()
+
+                        if (onibusPayload == null){
+                            onError(Throwable("Onibus não encontrado!"))
+                        } else {
+                            onComplete(BusPayloadMapper.map(onibusPayload))
+                        }
+                    } else {
+                        onError(Throwable("Onibus não encontrado!"))
+                    }
+                }
+
+                override fun onFailure(call: Call<OnibusPayload>, t: Throwable) {
+                    onError(t)
+                }
+            })
+    }
+
 
 }

@@ -34,34 +34,40 @@
         android:id="@+id/tvSignupMail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="@string/email"
         android:textAlignment="viewEnd"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_username_signup"
+        android:theme="@style/CustomTextView"
         app:layout_constraintEnd_toEndOf="@+id/tvSignupPassword"
         app:layout_constraintStart_toStartOf="@+id/tvSignupPassword"
-        app:layout_constraintTop_toTopOf="@+id/tv_username_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
         android:id="@+id/tvSignupPassword"
+        android:theme="@style/CustomTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/password"
         android:textAlignment="viewEnd"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_password_signup"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/tv_password_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSignupMail" />
 
     <Button
         android:id="@+id/btn_sign_up_finish"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="46dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="32dp"
+        android:background="@color/purple_500"
         android:layout_marginBottom="64dp"
         android:text="@string/register"
+        android:theme="@style/Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tv_password_signup"
         app:layout_constraintStart_toStartOf="@+id/tvSignupPassword" />
@@ -69,9 +75,13 @@
     <Button
         android:id="@+id/btCancelar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="46dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="32dp"
+        android:background="@color/purple_500"
         android:layout_marginBottom="16dp"
         android:text="@string/cancel"
+        android:theme="@style/Button"
         app:layout_constraintBottom_toTopOf="@+id/btn_sign_up_finish"
         app:layout_constraintEnd_toEndOf="@+id/btn_sign_up_finish"
         app:layout_constraintStart_toStartOf="@+id/btn_sign_up_finish" />
@@ -79,33 +89,35 @@
     <EditText
         android:id="@+id/tv_password_signup"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
+        android:paddingStart="6dp"
         android:hint="@string/password"
         android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSignupPassword"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toEndOf="@+id/tvSignupPassword"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username_signup" />
+        app:layout_constraintTop_toTopOf="@+id/tvSignupPassword" />
 
     <EditText
         android:id="@+id/tv_username_signup"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_height="0dp"
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
+        android:paddingStart="6dp"
         android:ems="10"
         android:foregroundTint="#FFFFFF"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textColorLink="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSignupMail"
         app:layout_constraintEnd_toEndOf="@+id/tv_password_signup"
         app:layout_constraintStart_toStartOf="@+id/tv_password_signup"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toTopOf="@+id/tvSignupMail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
