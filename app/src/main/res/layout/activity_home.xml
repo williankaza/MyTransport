@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/FullScreen"
-    tools:context=".HomeActivity">
+    tools:context=".ui.home.HomeActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -17,14 +17,15 @@
         android:src="@drawable/mytransportlogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btHomeRoutes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Button"
+        android:text="Go to Routes"
+        android:textSize="20dp"
         android:theme="@style/Button"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
@@ -35,7 +36,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Button"
+        android:text="About"
+        android:textSize="20dp"
         android:theme="@style/Button"
         app:layout_constraintEnd_toEndOf="@+id/btHomeRoutes"
         app:layout_constraintStart_toStartOf="@+id/btHomeRoutes"
@@ -45,11 +47,12 @@
         android:id="@+id/btHomeLogout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Button"
+        android:layout_marginBottom="32dp"
+        android:text="Logout"
+        android:textSize="20dp"
         android:theme="@style/Button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btHomeAbout"
-        app:layout_constraintStart_toStartOf="@+id/btHomeAbout"
-        app:layout_constraintTop_toBottomOf="@+id/btHomeAbout" />
+        app:layout_constraintStart_toStartOf="@+id/btHomeAbout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
