@@ -26,6 +26,7 @@
             android:textAlignment="viewStart"
             android:textColor="#FFFFFF"
             android:textSize="30dp"
+            android:background="#08C6AC"
             app:layout_constraintBottom_toBottomOf="@+id/tvLinha"
             app:layout_constraintEnd_toStartOf="@+id/ivFavorite"
             app:layout_constraintStart_toEndOf="@+id/tvLinha"
@@ -42,6 +43,7 @@
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="30dp"
+            android:background="#08C6AC"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,6 +65,7 @@
             android:layout_width="74dp"
             android:layout_height="53dp"
             android:layout_marginEnd="16dp"
+            android:background="#08C6AC"
             app:layout_constraintBottom_toBottomOf="@+id/numero_onibus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/numero_onibus"

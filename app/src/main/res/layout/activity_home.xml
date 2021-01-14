@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/FullScreen"
+    android:background="@color/purple_800"
     tools:context=".ui.home.HomeActivity">
 
     <ImageView

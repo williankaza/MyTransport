@@ -1,9 +1,7 @@
 package br.com.fiap.mytransport.ui.consulta
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fiap.mytransport.R
 import br.com.fiap.mytransport.data.remote.APIService
@@ -11,7 +9,7 @@ import br.com.fiap.mytransport.data.repository.BusRepositoryImpl
 import br.com.fiap.mytransport.domain.entity.Onibus
 import br.com.fiap.mytransport.domain.repository.BusRepository
 import br.com.fiap.mytransport.model.adapter.BusItemAdapter
-import br.com.fiap.mytransport.ui.maps.MapsActivity
+import kotlinx.android.synthetic.main.activity_routes.*
 
 class RoutesActivity : AppCompatActivity() {
 
@@ -20,6 +18,10 @@ class RoutesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_routes)
+
+        btRouterVoltar.setOnClickListener{
+            super.finish()
+        }
 
         busRepository = BusRepositoryImpl(APIService.instance)
         getListOnibus()
