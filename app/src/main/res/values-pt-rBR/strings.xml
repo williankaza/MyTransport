@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MyTransport</string>
-    <string name="title_activity_maps">Mapa</string>
+    <string name="app_name" translatable="false">MyTransport</string>
     <string name="title_activity_login" translatable="false">LoginActivity</string>
+    <string name="title_activity_maps">Mapa</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Senha</string>
     <string name="action_sign_in">Cadastro Novo Usuário</string>
