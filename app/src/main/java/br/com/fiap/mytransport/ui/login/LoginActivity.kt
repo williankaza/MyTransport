@@ -22,6 +22,9 @@ class LoginActivity : Activity() {
     val btn_log_in: Button by lazy { findViewById(R.id.btn_log_in) }
     val tv_username: TextView by lazy { findViewById(R.id.tv_username) }
     val tv_password: TextView by lazy { findViewById(R.id.tv_password) }
+    var flagLoginInicial = true
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,15 +85,19 @@ class LoginActivity : Activity() {
     private fun updateUI(currentUser: FirebaseUser?) {
 
         if (currentUser != null) {
-            if(currentUser.isEmailVerified) {
+            if (currentUser.isEmailVerified) {
                 startActivity(Intent(this, HomeActivity::class.java))
                 finish()
-            }else{
+            } else {
                 Toast.makeText(
-                        baseContext, "Por favor, verifique seu email para finalizar o cadastro",
-                        Toast.LENGTH_SHORT
+                    baseContext, "Por favor, verifique seu email para finalizar o cadastro",
+                    Toast.LENGTH_SHORT
                 ).show()
             }
+
+        }else if(flagLoginInicial){
+            flagLoginInicial = false
+            return
         } else {
             Toast.makeText(
                     baseContext, "Não foi possível se autenticar",

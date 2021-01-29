@@ -46,8 +46,8 @@ class SignUpActivity : Activity() {
             return
         }
 
-        if (tv_password.text.toString().isEmpty()) {
-            tv_password.error = "Por favor, entre com a senha"
+        if (tv_password.text.toString().isEmpty() || tv_password.text.length < 6) {
+            tv_password.error = "Por favor, entre com a senha contendo 6 caracteres"
             tv_password.requestFocus()
             return
         }
@@ -64,8 +64,9 @@ class SignUpActivity : Activity() {
                             }
                         }
                 } else {
+                    val taskresult = task.exception?.message
                     Toast.makeText(
-                        baseContext, "O cadastro falhou, por favor tente novamente ou mais tarde",
+                            baseContext, taskresult,
                         Toast.LENGTH_SHORT
                     ).show()
                 }
