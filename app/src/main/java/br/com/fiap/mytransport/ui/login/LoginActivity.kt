@@ -22,6 +22,9 @@ class LoginActivity : Activity() {
     val btn_log_in: Button by lazy { findViewById(R.id.btn_log_in) }
     val tv_username: TextView by lazy { findViewById(R.id.tv_username) }
     val tv_password: TextView by lazy { findViewById(R.id.tv_password) }
+    var flagLoginInicial = true
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +43,8 @@ class LoginActivity : Activity() {
     }
 
     private fun doLogin() {
+
+
         if (tv_username.text.toString().isEmpty()) {
             tv_username.error = getString(R.string.login_please_type_email)
             tv_username.requestFocus()
@@ -84,12 +89,16 @@ class LoginActivity : Activity() {
                 proximaTela.putExtra("userUid", currentUser.uid)
                 startActivity(proximaTela)
                 finish()
-            }else{
+            } else {
                 Toast.makeText(
                         baseContext, getString(R.string.login_verify_email),
                         Toast.LENGTH_SHORT
                 ).show()
             }
+
+        }else if(flagLoginInicial){
+            flagLoginInicial = false
+            return
         } else {
             Toast.makeText(
                     baseContext, getString(R.string.login_no_authetication),

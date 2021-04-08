@@ -46,7 +46,7 @@ class SignUpActivity : Activity() {
             return
         }
 
-        if (tv_password.text.toString().isEmpty()) {
+        if (tv_password.text.toString().isEmpty() || tv_password.text.length < 6) {
             tv_password.error = getString(R.string.login_please_type_password)
             tv_password.requestFocus()
             return
@@ -64,8 +64,9 @@ class SignUpActivity : Activity() {
                             }
                         }
                 } else {
+                    val taskresult = task.exception?.message
                     Toast.makeText(
-                        baseContext, getString(R.string.login_failure_try_later),
+                        baseContext, taskresult,
                         Toast.LENGTH_SHORT
                     ).show()
                 }
