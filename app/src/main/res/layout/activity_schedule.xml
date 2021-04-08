@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#08C6AC"
+    tools:context=".ui.schedule.ScheduleActivity">
+
+    <Button
+        android:id="@+id/btCadSchReturn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:text="@string/return_to_list"
+        android:theme="@style/Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edCadSchDstLongitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#EDECEC"
+        android:ems="10"
+        android:hint="@string/schedule_latitude"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvCadSchOriginLabel"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvCadSchOriginLabel"
+        app:layout_constraintTop_toBottomOf="@+id/edCadSchDstLatitude" />
+
+    <TextView
+        android:id="@+id/tvCadSchDestiny"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/schedule_destiny"
+        android:textColor="#F3F3F3"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/edCadSchHour"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edCadSchHour"
+        app:layout_constraintTop_toBottomOf="@+id/edCadSchOrgLongitude" />
+
+    <EditText
+        android:id="@+id/edCadSchDstLatitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#EDECEC"
+        android:ems="10"
+        android:hint="@string/schedule_latitude"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvCadSchOriginLabel"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvCadSchOriginLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvCadSchDestiny" />
+
+    <TextView
+        android:id="@+id/tvTitleSchedule"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/schedule_schedule"
+        android:textAlignment="center"
+        android:textColor="#F3F3F3"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCadSchOriginLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/schedule_origin"
+        android:textColor="#F3F3F3"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/edCadSchHour"
+        app:layout_constraintStart_toStartOf="@+id/edCadSchHour"
+        app:layout_constraintTop_toBottomOf="@+id/edCadSchHour" />
+
+    <EditText
+        android:id="@+id/edCadSchDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#EDECEC"
+        android:ems="10"
+        android:hint="@string/schedule_date"
+        android:inputType="date"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitleSchedule"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleSchedule"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleSchedule" />
+
+    <EditText
+        android:id="@+id/edCadSchHour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#EDECEC"
+        android:ems="10"
+        android:hint="@string/schedule_hour"
+        android:inputType="time"
+        android:singleLine="true"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/edCadSchDate"
+        app:layout_constraintStart_toStartOf="@+id/edCadSchDate"
+        app:layout_constraintTop_toBottomOf="@+id/edCadSchDate" />
+
+    <EditText
+        android:id="@+id/edCadSchOrgLatitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#EDECEC"
+        android:ems="10"
+        android:hint="@string/schedule_latitude"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvCadSchOriginLabel"
+        app:layout_constraintStart_toStartOf="@+id/tvCadSchOriginLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvCadSchOriginLabel" />
+
+    <EditText
+        android:id="@+id/edCadSchOrgLongitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#EDECEC"
+        android:ems="10"
+        android:hint="@string/schedule_longitude"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvCadSchOriginLabel"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvCadSchOriginLabel"
+        app:layout_constraintTop_toBottomOf="@+id/edCadSchOrgLatitude" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="#08C6AC"
+        app:cardBackgroundColor="#08C6AC"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:cardPreventCornerOverlap="false"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btCadSchReturn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#08C6AC"
+            android:dividerHeight="0dp"
+            android:elevation="0dp"
+            android:fadingEdgeLength="0dp"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:weightSum="2">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#08C6AC">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/btCadSchSave"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/schedule_save"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#08C6AC">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/btCadSchDelete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/schedule_delete"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

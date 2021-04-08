@@ -3,20 +3,19 @@ package br.com.fiap.mytransport.data.remote
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object APIService {
+object ScheduleAPIService {
+    private var INSTANCE: ScheduleService? = null
 
-    private var INSTANCE: BusService? = null
-
-    val instance: BusService?
+    val instance: ScheduleService?
         get() {
             if (INSTANCE == null) {
 
                 val retrofit = Retrofit.Builder()
-                        .baseUrl("https://my-transport-fiap-wyk.herokuapp.com")
+                        .baseUrl("https://mytransport-msusuario-fiap.herokuapp.com/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build()
 
-                INSTANCE = retrofit.create(BusService::class.java)
+                INSTANCE = retrofit.create(ScheduleService::class.java)
             }
 
             return INSTANCE

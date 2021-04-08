@@ -35,19 +35,19 @@ class SignUpActivity : Activity() {
 
     private fun signUpUser() {
         if (tv_username.text.toString().isEmpty()) {
-            tv_username.error = "Por favor, entre com e-mail"
+            tv_username.error = getString(R.string.login_please_type_email)
             tv_username.requestFocus()
             return
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(tv_username.text.toString()).matches()) {
-            tv_username.error = "Por favor, entre com um e-mail valido"
+            tv_username.error = getString(R.string.login_please_type_valid_email)
             tv_username.requestFocus()
             return
         }
 
         if (tv_password.text.toString().isEmpty()) {
-            tv_password.error = "Por favor, entre com a senha"
+            tv_password.error = getString(R.string.login_please_type_password)
             tv_password.requestFocus()
             return
         }
@@ -65,7 +65,7 @@ class SignUpActivity : Activity() {
                         }
                 } else {
                     Toast.makeText(
-                        baseContext, "O cadastro falhou, por favor tente novamente ou mais tarde",
+                        baseContext, getString(R.string.login_failure_try_later),
                         Toast.LENGTH_SHORT
                     ).show()
                 }

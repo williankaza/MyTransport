@@ -33,13 +33,6 @@ class BusItemAdapter(private val lsOnibus: List<Onibus>,
     override fun onBindViewHolder(holder: BusViewHolder, position: Int) {
         val onibus = lsOnibus[position]
         holder?.bindView(onibus, context)
-
-        var img = holder?.itemView.findViewById<ImageView>(R.id.ivFavorite)
-        if (onibus.favorito){
-            img.setImageResource(R.drawable.fav_heart)
-        } else {
-            img.setImageResource(R.drawable.unfav_heart)
-        }
     }
 
     override fun getItemCount(): Int {
@@ -51,30 +44,12 @@ class BusItemAdapter(private val lsOnibus: List<Onibus>,
 
         fun bindView(onibus: Onibus, context: Context){
             busRepository = BusRepositoryImpl(APIService.instance)
-            itemView.findViewById<TextView>(R.id.numero_onibus).text = onibus.numero
+            itemView.findViewById<TextView>(R.id.tvScheduleDate).text = onibus.numero
 
-            itemView.findViewById<Button>(R.id.consultarOnibus).setOnClickListener{
-                Log.d("wyk","Chamou a ação do Botão")
+            itemView.findViewById<Button>(R.id.btEditSchedule).setOnClickListener{
                 val intent = Intent(context, MapsActivity::class.java)
                 intent.putExtra("NUMERO_ONIBUS", onibus.numero)
                 context.startActivity(intent)
-            }
-
-            itemView.findViewById<ImageView>(R.id.ivFavorite).setOnClickListener{
-                busRepository.atualizarFavorito(
-                    onibus.numero, {
-                    onibus ->
-                        var img = itemView.findViewById<ImageView>(R.id.ivFavorite)
-                        if (onibus != null){
-                            if (onibus.favorito){
-                                img.setImageResource(R.drawable.fav_heart)
-                            } else {
-                                img.setImageResource(R.drawable.unfav_heart)
-                            }
-                        }
-                    },{
-
-                    })
             }
         }
 

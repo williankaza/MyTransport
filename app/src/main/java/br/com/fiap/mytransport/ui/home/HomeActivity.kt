@@ -8,6 +8,7 @@ import br.com.fiap.mytransport.R
 import br.com.fiap.mytransport.ui.about.AboutActivity
 import br.com.fiap.mytransport.ui.consulta.RoutesActivity
 import br.com.fiap.mytransport.ui.login.LoginActivity
+import br.com.fiap.mytransport.ui.schedule.ScheduleQueryActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_home.*
@@ -26,6 +27,13 @@ class HomeActivity : AppCompatActivity() {
             startActivity(proximaTela)
         }
 
+        btHomeSchedule.setOnClickListener{
+            val proximaTela = Intent(this, ScheduleQueryActivity::class.java)
+            proximaTela.putExtra("userUid", auth.currentUser?.uid)
+
+            startActivity(proximaTela)
+        }
+
         btHomeAbout.setOnClickListener {
             val proximaTela = Intent(this, AboutActivity::class.java)
             startActivity(proximaTela)
@@ -33,7 +41,6 @@ class HomeActivity : AppCompatActivity() {
 
         btHomeLogout.setOnClickListener{
             auth.signOut()
-            Log.d("wyk","SignOut")
             val proximaTela = Intent(this, LoginActivity::class.java)
             startActivity(proximaTela)
             finish()

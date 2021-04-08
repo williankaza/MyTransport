@@ -25,7 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Go to Routes"
+        android:text="@string/home_go_to_routes"
         android:textSize="20dp"
         android:theme="@style/Button"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
@@ -33,16 +33,28 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
+        android:id="@+id/btHomeSchedule"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/home_go_to_schedule"
+        android:textSize="20dp"
+        android:theme="@style/Button"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/btHomeRoutes" />
+
+    <Button
         android:id="@+id/btHomeAbout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="About"
+        android:layout_marginTop="16dp"
+        android:text="@string/go_to_about"
         android:textSize="20dp"
         android:theme="@style/Button"
         app:layout_constraintEnd_toEndOf="@+id/btHomeRoutes"
         app:layout_constraintStart_toStartOf="@+id/btHomeRoutes"
-        app:layout_constraintTop_toBottomOf="@+id/btHomeRoutes" />
+        app:layout_constraintTop_toBottomOf="@+id/btHomeSchedule" />
 
     <Button
         android:id="@+id/btHomeLogout"

@@ -27,7 +27,6 @@ class LoginActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         auth = FirebaseAuth.getInstance()
-        Log.d("wyk","Voltei para o Login")
 
         btn_sign_up.setOnClickListener() {
             startActivity(Intent(this, SignUpActivity::class.java))
@@ -41,22 +40,20 @@ class LoginActivity : Activity() {
     }
 
     private fun doLogin() {
-
-
         if (tv_username.text.toString().isEmpty()) {
-            tv_username.error = "Por favor, entre com e-mail"
+            tv_username.error = getString(R.string.login_please_type_email)
             tv_username.requestFocus()
             return
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(tv_username.text.toString()).matches()) {
-            tv_username.error = "Por favor, entre com um e-mail válido"
+            tv_username.error = getString(R.string.login_please_type_valid_email)
             tv_username.requestFocus()
             return
         }
 
         if (tv_password.text.toString().isEmpty()) {
-            tv_password.error = "Por favor, entre com a senha"
+            tv_password.error = getString(R.string.login_please_type_password)
             tv_password.requestFocus()
             return
         }
@@ -83,17 +80,19 @@ class LoginActivity : Activity() {
 
         if (currentUser != null) {
             if(currentUser.isEmailVerified) {
-                startActivity(Intent(this, HomeActivity::class.java))
+                val proximaTela = Intent(this, HomeActivity::class.java)
+                proximaTela.putExtra("userUid", currentUser.uid)
+                startActivity(proximaTela)
                 finish()
             }else{
                 Toast.makeText(
-                        baseContext, "Por favor, verifique seu email para finalizar o cadastro",
+                        baseContext, getString(R.string.login_verify_email),
                         Toast.LENGTH_SHORT
                 ).show()
             }
         } else {
             Toast.makeText(
-                    baseContext, "Não foi possível se autenticar",
+                    baseContext, getString(R.string.login_no_authetication),
                     Toast.LENGTH_SHORT
             ).show()
         }

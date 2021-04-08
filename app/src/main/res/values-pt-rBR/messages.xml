@@ -1,0 +1,25 @@
+<resources>
+    <string name="schRepo_not_found">Nenhum agendamento encontrado</string>
+    <string name="schRepo_schedule_not_found">Agendamento não foi encontrado</string>
+    <string name="schRepo_create_error">Erro ao criar o agendamento</string>
+    <string name="schRepo_update_error">Erro ao atualizar o agendamento</string>
+    <string name="schRepo_delete_error">Erro ao excluir o agendamento</string>
+    <string name="schRepo_delete_success">Excluido com sucesso</string>
+    <string name="busRepo_not_found">Nenhuma linha encontrada </string>
+    <string name="busRepo_bus_line_not_found">Linha não foi encontrada</string>
+    <string name="login_please_type_email">Por favor, digite o e-mail</string>
+    <string name="login_please_type_valid_email">Por favor, informe um e-mail valido</string>
+    <string name="login_please_type_password">Por favor, digite a senha</string>
+    <string name="login_verify_email">Verifique o seu e-mail para finalizar o cadastro</string>
+    <string name="login_no_authetication">Não foi possível autenticar</string>
+    <string name="login_failure_try_later">O cadastro falhou, por favor tente novamente ou mais tarde</string>
+    <string name="schedule_create_successful">O agendamento foi criado com sucesso</string>
+    <string name="schedule_update_successful">O agendamento foi alterado com sucesso</string>
+    <string name="schedule_deleted_successful">O agendamento foi excluido com sucesso</string>
+    <string name="schedule_type_date_hour">Informe a data e hora do agendamento</string>
+    <string name="schedule_date_hour_correct_format">"Coloque a data e hora no formato correto! Data: dd/mm/yyyy e Hora: hh:mm"</string>>
+    <string name="schedule_valid_latitude_origin">Digite a latitude de origem</string>
+    <string name="schedule_valid_longitude_origin">Digite a longitude de origem</string>
+    <string name="schedule_valid_latitude_destiny">Digite a latitude de destino</string>
+    <string name="schedule_valid_longitude_destiny">Digite a longitude de destino</string>
+</resources>

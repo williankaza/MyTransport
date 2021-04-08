@@ -18,23 +18,23 @@
         android:background="#08C6AC">
 
         <TextView
-            android:id="@+id/numero_onibus"
+            android:id="@+id/tvScheduleDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="#08C6AC"
             android:textAlignment="viewStart"
             android:textColor="#FFFFFF"
-            android:textSize="30dp"
-            android:background="#08C6AC"
-            app:layout_constraintBottom_toBottomOf="@+id/tvLinha"
-            app:layout_constraintEnd_toStartOf="@+id/ivFavorite"
-            app:layout_constraintStart_toEndOf="@+id/tvLinha"
-            app:layout_constraintTop_toTopOf="@+id/tvLinha"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvScheduleDateLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvScheduleDateLabel"
+            app:layout_constraintTop_toTopOf="@+id/tvScheduleDateLabel"
             tools:text="12314" />
 
         <TextView
-            android:id="@+id/tvLinha"
+            android:id="@+id/tvScheduleDateLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -48,7 +48,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/consultarOnibus"
+            android:id="@+id/btEditSchedule"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -56,19 +56,11 @@
             android:background="#212B37"
             android:text="@string/show_route"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/ivFavorite"
-            app:layout_constraintStart_toStartOf="@+id/tvLinha"
-            app:layout_constraintTop_toBottomOf="@+id/numero_onibus" />
+            app:layout_constraintEnd_toEndOf="@+id/tvScheduleDate"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvScheduleDateLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvScheduleDate"
+            app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/ivFavorite"
-            android:layout_width="74dp"
-            android:layout_height="53dp"
-            android:layout_marginEnd="16dp"
-            android:background="#08C6AC"
-            app:layout_constraintBottom_toBottomOf="@+id/numero_onibus"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/numero_onibus"
-            app:srcCompat="@drawable/unfav_heart" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="schRepo_not_found">No schedule found!</string>
+    <string name="schRepo_schedule_not_found">Schedule was not found!</string>
+    <string name="schRepo_create_error">Error creating schedule</string>
+    <string name="schRepo_update_error">Error updating schedule</string>
+    <string name="schRepo_delete_error">Error deleting schedule</string>
+    <string name="schRepo_delete_success">Successfully deleted</string>
+    <string name="busRepo_not_found">No bus line found</string>
+    <string name="busRepo_bus_line_not_found">Bus line not found</string>
+    <string name="login_please_type_email">Please, type your e-mail</string>
+    <string name="login_please_type_valid_email">Please, type a valid e-mail</string>
+    <string name="login_please_type_password">Please, type the password</string>
+    <string name="login_verify_email">Verify your e-mail to finalize the registration</string>
+    <string name="login_no_authetication">Could not authenticate</string>
+    <string name="login_failure_try_later">Registration failed, please try again or later</string>
+    <string name="schedule_create_successful">Schedule successfully created</string>
+    <string name="schedule_update_successful">Schedule successfully updated</string>
+    <string name="schedule_deleted_successful">Schedule successfully deleted</string>
+    <string name="schedule_type_date_hour">Enter the date and schedule time</string>
+    <string name="schedule_date_hour_correct_format">Enter the date and time in the correct format! Date: dd/mm/yyyy and Hour: hh:mm</string>
+    <string name="schedule_valid_latitude_origin">Enter the origin latitude</string>
+    <string name="schedule_valid_longitude_origin">Enter the origin longitude</string>
+    <string name="schedule_valid_latitude_destiny">Enter the destiny latitude</string>
+    <string name="schedule_valid_longitude_destiny">Enter the destiny longitude</string>
+</resources>
