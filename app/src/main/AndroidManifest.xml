@@ -18,8 +18,8 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyTransport">
-        <activity android:name=".ui.schedule.ScheduleQueryActivity"></activity>
-        <activity android:name=".ui.schedule.ScheduleActivity" />
+        <activity android:name=".ui.schedule.ScheduleQueryActivity" android:theme="@style/FullScreen"></activity>
+        <activity android:name=".ui.schedule.ScheduleActivity" android:theme="@style/FullScreen"/>
         <activity
             android:name=".ui.about.AboutActivity"
             android:theme="@style/FullScreen" />
